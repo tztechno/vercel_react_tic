@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-// Square コンポーネント
 function Square({ value, onSquareClick }) {
   return (
     <button className="square" onClick={onSquareClick}>
@@ -9,7 +8,6 @@ function Square({ value, onSquareClick }) {
   );
 }
 
-// Board コンポーネント
 function Board({ xIsNext, squares, onPlay }) {
   function handleClick(i) {
     if (calculateWinner(squares) || squares[i]) {
@@ -54,7 +52,6 @@ function Board({ xIsNext, squares, onPlay }) {
   );
 }
 
-// Game コンポーネント
 export default function Game() {
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
@@ -97,7 +94,6 @@ export default function Game() {
   );
 }
 
-// calculateWinner 関数
 function calculateWinner(squares) {
   const lines = [
     [0, 1, 2],
